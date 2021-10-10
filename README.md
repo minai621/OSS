@@ -16,6 +16,7 @@
 
 ### FrontEnd
 * React
+* Framer Motion
 * Typescript
 * Chakra-ui
 
