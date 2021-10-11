@@ -14,7 +14,8 @@ const theme = extendTheme({
     global: {
       body: {
         bg: 'white.100',
-        color: 'SLB'
+        color: 'SLB',
+        lineHeight: 1.5,
       }
     }
   },

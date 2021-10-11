@@ -3,6 +3,7 @@ import { Box, BoxProps, ComponentWithAs, Flex } from '@chakra-ui/react';
 import Loading from '../atom/Loading';
 import { motion, MotionProps } from 'framer-motion';
 import Header from '../molecule/Header';
+import Contents from '../organism/Contents';
 
 const MotionBox = motion<BoxProps>(Box);
 
@@ -24,7 +25,7 @@ const HomeTemplate: ComponentWithAs<'div', MotionProps & BoxProps> = () => {
     setTimeout(()=> {setLoading(true)}, 2000)
   }, [])
   return (
-    <Flex minH='100vh' justify='center'>
+    <Flex w={'100%'} minH='100vh' justify='center'>
       { loading === false ? (
         <MotionBox
           initial="visible"
@@ -34,8 +35,9 @@ const HomeTemplate: ComponentWithAs<'div', MotionProps & BoxProps> = () => {
           <Loading/>
         </MotionBox>
       ) :
-        <Flex w={'50%'} justify={'center'} dir={'column'}>
+        <Flex w={'100%'} h={'100%'} justify={'center'} flexDir={'column'}>
           <Header/>
+          <Contents/>
         </Flex>
       }
     </Flex>
