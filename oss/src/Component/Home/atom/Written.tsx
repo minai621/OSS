@@ -1,10 +1,9 @@
-import { Flex } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Written: React.FC = () => {
   return(
-    <Flex>
-
-    </Flex>
+    <Link to='/write'>글쓰기</Link>
   )
 }
 

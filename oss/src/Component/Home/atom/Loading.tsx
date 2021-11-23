@@ -7,8 +7,8 @@ const Loading: React.FC = () => {
       <Text
         fontSize='50px'
         fontWeight='bold'
+        borderBottom={'1px solid'}
       >Party SSU
-        <hr style={{borderColor: 'SLB'}}/>
       </Text>
       <Text>우리들이 함께하는 식사</Text>
     </Flex>

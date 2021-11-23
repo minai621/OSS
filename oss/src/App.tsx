@@ -1,10 +1,10 @@
-import HomeTemplate from './Component/Home/template/HomeTemplate';
+import React from 'react';
+import AppRouter from './routes/AppRouter';
 
-const App = ()=> {
+const App: React.FC = ()=> {
   return(
-      <div
-      style={{width: '100vw', justifyContent: 'center'}}>
-        <HomeTemplate />
+      <div style={{width: '100%', minHeight: '100vh', justifyContent: 'center'}}>
+        <AppRouter />
       </div>
   )
 }

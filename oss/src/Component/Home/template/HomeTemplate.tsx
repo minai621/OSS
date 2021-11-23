@@ -1,9 +1,10 @@
-import react, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, BoxProps, ComponentWithAs, Flex } from '@chakra-ui/react';
 import Loading from '../atom/Loading';
 import { motion, MotionProps } from 'framer-motion';
 import Header from '../molecule/Header';
 import Contents from '../organism/Contents';
+import Written from '../atom/Written';
 
 const MotionBox = motion<BoxProps>(Box);
 
@@ -22,10 +23,10 @@ const HomeTemplate: ComponentWithAs<'div', MotionProps & BoxProps> = () => {
       },
   };
   useEffect(() => {
-    setTimeout(()=> {setLoading(true)}, 2000)
+    setTimeout(()=> {setLoading(true)}, 0)
   }, [])
   return (
-    <Flex w={'100%'} minH='100vh' justify='center'>
+    <Flex w='100%' justify='center'>
       { loading === false ? (
         <MotionBox
           initial="visible"
@@ -35,9 +36,20 @@ const HomeTemplate: ComponentWithAs<'div', MotionProps & BoxProps> = () => {
           <Loading/>
         </MotionBox>
       ) :
-        <Flex w={'100%'} h={'100%'} justify={'center'} flexDir={'column'}>
+        <Flex w={'100%'} h={'100%'} justify={'center'} align={'center'} flexDir={'column'}>
           <Header/>
           <Contents/>
+          <Box
+            as="button"
+            pos="fixed"
+            bottom={"5%"}
+            borderRadius="md"
+            bg="SLB"
+            minW={"100px"} px={10} h={10}
+            color="white"
+          >
+            <Written />
+          </Box>
         </Flex>
       }
     </Flex>
